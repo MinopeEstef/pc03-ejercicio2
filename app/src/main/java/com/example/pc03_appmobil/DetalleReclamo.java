@@ -25,10 +25,10 @@ public class DetalleReclamo extends AppCompatActivity {
 
     TextInputLayout codigoInput, asuntoInput, descripcionInput;
     RadioGroup radioGroup;
-    RadioButton radioButtonPendiente = findViewById(R.id.radioButtonPendiente);
-    RadioButton radioButtonProceso = findViewById(R.id.radioButtonProceso);
-    RadioButton radioButtonCompleto = findViewById(R.id.radioButtonCompleto);
-    RadioButton radioButtonRechazado = findViewById(R.id.radioButtonRechazado);
+    RadioButton radioButtonPendiente  ;
+    RadioButton radioButtonProceso  ;
+    RadioButton radioButtonCompleto ;
+    RadioButton radioButtonRechazado ;
 
     MaterialButton actualizarBtn, eliminarBtn;
     Reclamo reclamo;
@@ -49,6 +49,10 @@ public class DetalleReclamo extends AppCompatActivity {
         radioGroup = findViewById(R.id.radioGroup);
         actualizarBtn = findViewById(R.id.detalleBtnUpdate);
         eliminarBtn = findViewById(R.id.detalleBtnEliminarLibro);
+          radioButtonPendiente = findViewById(R.id.radioButtonPendiente);
+          radioButtonProceso = findViewById(R.id.radioButtonProceso);
+          radioButtonCompleto = findViewById(R.id.radioButtonCompleto);
+          radioButtonRechazado = findViewById(R.id.radioButtonRechazado);
 
         Intent intent = getIntent();
         reclamo = (Reclamo) intent.getSerializableExtra(ReclamoEnun.KEY_NAME.getValue());

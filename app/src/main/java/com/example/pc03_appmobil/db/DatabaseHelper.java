@@ -29,8 +29,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-
-       String queryReclamo = String.format("CREATE TABLE IF NOT EXISTS %s (%s INTEGER PRIMARY KEY AUTOINCREMENT, %s TEXT, %s TEXT, %s INTEGER);",
+        String queryReclamoDrop =String.format("DROP TABLE IF EXISTS mi_reclamos;");
+        db.execSQL(queryReclamoDrop);
+       String queryReclamo = String.format("CREATE TABLE IF NOT EXISTS %s (%s INTEGER PRIMARY KEY AUTOINCREMENT, %s TEXT, %s TEXT,  %s TEXT, %s TEXT, %s TEXT);",
                 ReclamoEnun.TABLE_NAME.getValue(),
                 ReclamoEnun.COL_ID.getValue(),
                 ReclamoEnun.COL_CODIGO.getValue(),
@@ -39,6 +40,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 ReclamoEnun.COL_ESTADO.getValue(),
                 ReclamoEnun.COL_FECHA.getValue()
         );
+       System.out.println("entra a eliminae");
          db.execSQL(queryReclamo);
     }
 

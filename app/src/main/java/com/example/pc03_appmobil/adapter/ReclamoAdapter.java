@@ -3,6 +3,7 @@ package com.example.pc03_appmobil.adapter;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -51,9 +52,10 @@ public class ReclamoAdapter extends RecyclerView.Adapter<ReclamoAdapter.MyViewHo
             holder.asuntoTextView.setText(reclamo.getAsunto());
             holder.descripcionTextView.setText(reclamo.getDescripcion());
             holder.estadoTextView.setText(reclamo.getEstado());
-            holder.fechaTextView.setText(reclamo.getFecha());
+            holder.fechaTextView.setText(reclamo.getFecha().isEmpty()?"":reclamo.getFecha());
 
             holder.mainLayout.setOnClickListener(v -> {
+                System.out.println(v);
                 Intent intent = new Intent(context, DetalleReclamo.class);
                 intent.putExtra(ReclamoEnun.KEY_NAME.getValue(), reclamo);
                 activity.startActivityForResult(intent, 1);
@@ -76,6 +78,9 @@ public class ReclamoAdapter extends RecyclerView.Adapter<ReclamoAdapter.MyViewHo
             asuntoTextView = itemView.findViewById(R.id.textViewAsunto);
             descripcionTextView = itemView.findViewById(R.id.textViewDescripcion);
             estadoTextView = itemView.findViewById(R.id.textViewEstado);
+            fechaTextView = itemView.findViewById(R.id.textViewFecha);
+            mainLayout = (LinearLayout) itemView.findViewById(R.id.mainLayout);
+
             switch (estadoTextView.getText().toString()){
                 case "Pendiente":
                     estadoTextView.setBackgroundColor(ContextCompat.getColor(itemView.getContext(), R.color.yellow));
@@ -92,9 +97,6 @@ public class ReclamoAdapter extends RecyclerView.Adapter<ReclamoAdapter.MyViewHo
                 default:
                     return;
             }
-
-            fechaTextView = itemView.findViewById(R.id.textViewFecha);
-            mainLayout = itemView.findViewById(R.id.mainLayout);
 
             Animation teanslate_ani = AnimationUtils.loadAnimation(context, R.anim.translate_anim);
             mainLayout.setAnimation(teanslate_ani);
