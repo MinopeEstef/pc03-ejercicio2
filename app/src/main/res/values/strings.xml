@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Gestión de Reclamos</string>
+    <string name="no_data">No existen reclamos</string>
+    <string name="val_id_libro">1</string>
+    <string name="val_titulo_libro">Titulo 1</string>
+    <string name="val_autor_libro">Autor 1</string>
+    <string name="val_paginas_libro">120</string>
+    <string name="hint_codigo">Codigo Reclamo</string>
+    <string name="hint_asunto">Asunto Reclamo</string>
+    <string name="hint_descrip_reclamo">Descripcion Reclamo</string>
+    <string name="menu_item_eliminar_todo">Eliminar Todo</string>
+    <string name="btn_apdate_libro">Actualizar</string>
+    <string name="btn_add_reclamo">Agregar Reclamo</string>
+    <string name="btn_delete_libro">Eliminar</string>
+</resources>
